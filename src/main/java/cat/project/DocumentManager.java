@@ -103,9 +103,11 @@ public class DocumentManager {
      * @return optional document
      */
     public Optional<Document> findById(String id) {
-        for(var document : documentList) {
-            if(document.getId().equals(id)) {
-                return Optional.of(document);
+        if(id != null) {
+            for (var document : documentList) {
+                if (document.getId().equals(id)) {
+                    return Optional.of(document);
+                }
             }
         }
         return Optional.empty();
